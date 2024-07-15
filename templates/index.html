@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Random Quote</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+    <div class="jumbotron text-center">
+        <h1 class="display-4">Random Quote</h1>
+        {% if quote %}
+            <p class="lead">{{ quote['content'] }}</p>
+            <hr class="my-4">
+            <p>— {{ quote['author'] }}</p>
+        {% else %}
+            <p class="lead">Sorry, we couldn't fetch a quote at this moment. Please try again later.</p>
+        {% endif %}
+        <a class="btn btn-primary btn-lg" href="/" role="button">Get Another Quote</a>
+    </div>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
